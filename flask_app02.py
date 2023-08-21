@@ -29,7 +29,7 @@ def ciklas():
     return render_template("ciklas.html")
 
 @app.route("/naujienos")
-def ciklas():
+def naujienos():
     return render_template("naujienos.html")
 
 
