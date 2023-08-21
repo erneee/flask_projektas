@@ -40,7 +40,7 @@ def pasisveikink5():
     return render_template('pasisveikink5.html', vardas=vardas)
 
 
-# API_KEY = "827080b9c30e481caf783629232108"
+# API_KEY = ""
 # def gauti_oru_prognoze(API_KEY):
 #     base_url = 'http://api.weatherapi.com/v1/forecast.json'
 #     city = "Vilnius"
