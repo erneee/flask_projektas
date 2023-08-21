@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pasisveikink 5 kartus</title>
+</head>
+<body>
+
+<p><a href="/orai">Paziureti orus</a></p>
+<p><a href="/ciklas">Paziureti cikla</a></p>
+<p><a href="/login">Paziureti login</a></p>
+<p><a href="/naujienos">Paziureti naujienas</a></p>
+
+
+<h1>Pasisveikinimai</h1>
+{% if vardas %}
+
+{% for _ in range(5) %}
+<li>Sveikas, {{ vardas }}!</li>
+{% endfor %}
+
+{% else %}
+<h2>Įveskite savo vardą:</h2>
+<form action="#" method="POST">
+    <input type="text" name="vardas" required>
+    <input type="submit" value="Pateikti">
+</form>
+{% endif %}
+</body>
+</html>

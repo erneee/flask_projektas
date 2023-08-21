@@ -1,4 +1,7 @@
 from flask import Flask, render_template, request
+import requests
+import json
+import sys
 
 
 app = Flask(__name__)
@@ -6,10 +9,6 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return render_template("index.html")
-
-@app.route("/orai")
-def orai():
-    return render_template("orai.html")
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -32,8 +31,59 @@ def ciklas():
 def naujienos():
     return render_template("naujienos.html")
 
+@app.route('/pasisveikink5', methods=['GET', 'POST'])
+def pasisveikink5():
+    if request.method == 'GET':
+        return render_template("pasisveikink5.html")
+    if request.method == 'POST':
+        vardas = request.form.get('vardas')
+    return render_template('pasisveikink5.html', vardas=vardas)
 
 
+# API_KEY = "827080b9c30e481caf783629232108"
+# def gauti_oru_prognoze(API_KEY):
+#     base_url = 'http://api.weatherapi.com/v1/forecast.json'
+#     city = "Vilnius"
+#     params = {
+#         'key': API_KEY,
+#         'q': 'Vilnius',
+#         'days': 1,
+#         'aqi': 'no',
+#         'alerts': 'no'
+#     }
+#
+#
+#     headers = {
+#         "Connection": "keep-alive",
+#         "Vary": "Accept-Encoding",
+#         "Content-Length": "2334",
+#         "Content-Type": "text/html",
+#         "Date": "Mon, 21 Aug 2023 08:38:51 GMT"
+#     }
+#
+#
+#
+#
+#     response = requests.get(base_url, params=params, headers=headers)
+#     data = response.json()
+#     if response.status_code == 200:
+#         data = response.json()
+#         print(data)
+#     else:
+#         print('Request failed with status code:', response.status_code)
+#
+#
+#
+#
+#
+#
+# @app.route("/orai")
+# def orai():
+#     temperatura = gauti_oru_prognoze(API_KEY)
+#     if temperatura is not None:
+#         return render_template('orai.html', temperatura=temperatura)
+#     else:
+#         return "Nepavyko gauti orų prognozės."
 
 
 if __name__ == "__main__":

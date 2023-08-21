@@ -2,10 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Vardas</title>
 </head>
 <body>
-<h1>Jus adrese prijunget varda {{ sablono_kint }}</h1>
+
+
+{% for pasisveikinimas in pasisveikinimai %}
+<li>{{ sablono_kint }}</li>
+{% endfor %}
+
+
+<h1>Jus adrese prijunget varda </h1>
 <br>
 <p><a href="/">Grizti namo</a></p>
 <p><a href="/orai">Paziureti orus</a></p>
