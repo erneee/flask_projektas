@@ -28,6 +28,21 @@ def user(kintamasis):
 def ciklas():
     return render_template("ciklas.html")
 
+@app.route("/naujienos")
+def ciklas():
+    return render_template("naujienos.html")
+
+
+
+
 
 if __name__ == "__main__":
     app.run()
+
+
+# Flask užduotis
+# 1. Sukurti endpointą /naujienos, jam šabloną su su tekstu "Čia mano puslapio naujienos"
+# 2. Sukurti nuorodas visuose šablonuose, kad būtų galima atsivertus bet kokį puslapį,
+# patekti į pradinį puslapį, orų, logino, naujienų puslapius. Visas nuorodas sudėti į pastraipas (<p>) tegas.
+# 3. Sukurti naują endpointą /pasisveikink5, jame turėtų būti forma, įvedus į ją
+# tekstą, pvz vardą, atsidarytų kitas puslapis(šablonas) su pasisveikinimu 5 kartus.
