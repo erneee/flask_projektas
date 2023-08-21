@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ciklas</title>
+</head>
+<body>
+<h4><a href="/">Grizti namo</a></h4>
+<h3>Lyginiai iki 9</h3>
+
+
+{% for x in range(10) %}
+{% if x % 2 == 0 %}
+<p>{{ x }}</p>
+{% endif %}
+{% endfor %}
+
+
+<hr/>
+<h3>Nuo 0 iki 4</h3>
+{% for x in range(5) %}
+<p>{{ x }}</p>
+{% endfor %}
+<hr/>
+
+</body>
+</html>
